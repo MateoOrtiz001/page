@@ -11,6 +11,8 @@
 /* Prevenir scroll horizontal y asegurar medidas relativas */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -22,12 +24,147 @@ body {
 /** Código CSS DE LA PÁGINA PRINCIPAL **/
 
 body {
-    background-image: url("imagenes/fondo.png");
+    background-image: url("imagenes/fondo2.png");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     
 }
+
+
+/* Barra de navegación */
+.barraNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+    background: #2C2C2C;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.textoNav {
+    color: white;
+    font-family: Montserrat;
+    font-size: 1.1em;
+    margin: 0;
+    flex: 0 0 auto;
+}
+
+.nav-toggle {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: white;
+    font-size: 1.4em;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-toggle:focus-visible {
+    outline: 2px solid #7ac49f;
+    outline-offset: 2px;
+}
+
+#header {
+    font-family: Montserrat;
+}
+
+nav {
+    margin-left: auto;
+    padding-left:35em;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tablaNav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.tablaNav > li {
+    position: relative;
+}
+
+.tablaNav li a {
+    color: white;
+    text-decoration: none;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 0.95em;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.submenu-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 0.95em;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.submenu-toggle:hover,
+.submenu-toggle:focus-visible {
+    color: #7ac49f;
+    outline: none;
+}
+
+.tablaNav li a:hover {
+    color: #7ac49f;
+}
+
+.tablaNav li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    padding: 12px 0;
+    background: #2C2C2C;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.tablaNav li:hover > ul {
+    display: block;
+}
+
+.tablaNav li ul li {
+    width: 100%;
+}
+
+.tablaNav li ul li a {
+    display: block;
+    padding: 8px 16px;
+}
+
+.tablaNav li ul li ul {
+    top: 0;
+    left: 100%;
+}
+
+
 
 
 /*** CAJAS, PARRAFOS Y CONTENIDO GENERAL***/
@@ -35,116 +172,205 @@ body {
 /** Estílo de la caja principal **/
 .pagina {
     border: 1px solid black;
-    background: url("blog/imagenes/haloInf.png");
+    background: url("imagenes/NS02b.png");
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
+    background-position: center 20%; /* 20% desde la parte superior */
     filter: alpha(opacity=99);
     -moz-opacity: 0.99;
     opacity: 0.99;
     width: 90%;
     margin: auto;
+    margin-bottom: 50px;
     display: block;
-    padding-bottom: 25px; 
+    padding-bottom: 0; 
     box-shadow: 0 0 10px black;
+    position: relative;
+    overflow: hidden;
 }
 
-.capaSup {
-    transition: background 1s ease-out;
+.pagina::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 7, 45, 0.7);
+    z-index: 0;
+}
+
+.pagina > * {
+    position: relative;
+    z-index: 1;
+}
+
+/** Layout principal **/
+.content-wrapper {
+    width: 90%;
+    margin: 0 auto 50px;
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.pagina--principal {
+    flex: 2;
     width: 100%;
-    height: 100%;
+    margin: 0;
+    min-width: 0;
+    border-radius: 3px;
+}
+
+.pagina--principal li{
+    color:white;
+    font-family: montserrat;
+    font-size: 0.95em;
+    margin-bottom: 8px;
+    padding-left:4em;
+}
+
+.sidebar {
+    flex: 1;
+    background: #2C2C2C;
+    border: 1px solid black;
     box-shadow: 0 0 10px black;
-}
-.capaSup:hover{
-    background: rgb(2,1,42,0.5);
-    background-blend-mode: hard-light;
+    padding: 25px;
+    border-radius: 3px;
+    color: white;
 }
 
+.sidebar-card + .sidebar-card {
+    margin-top: 20px;
+    font-family:montserrat;
+}
 
+.sidebar-card h3 {
+    margin-top: 0;
+    font-family: montserrat;
+    font-size: 1.3em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+
+.sidebar-card p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-family: montserrat;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.sidebar-links li {
+    margin-bottom: 10px;
+}
+
+.sidebar-list {
+    padding:0.6em;
+}
+
+.sidebar-list li{
+    color:white;
+    font-family: montserrat;
+    font-size: 0.85em;
+    margin-bottom: 6px;
+    padding-left:0.5em;
+    padding-bottom: 0.3em;
+}
+
+.sidebar-links a {
+    font-size: 0.95em;
+    color: white;
+    text-decoration: none;
+    font-family: montserrat;
+    transition: color 0.3s ease;
+}
+
+.sidebar-links a:hover {
+    color: #f5b041;
+}
 
 /** Títulos **/
 /*Principal*/
 h1{
     width: 88%;
     margin: auto;
-    border-bottom: 2px solid white;
-    background: linear-gradient(to top, black, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0)); /*ponemos varios colores transparentes para que el gradiente sea muy pequeño*/
+    border-bottom: 3px solid black;
     text-align: center;
-    font-size: 3em;
-    font-family:montserrat;
-    padding:0.2em;
-    color:white;
+    padding: 0.2em;
+    font-size: 2.3em;
+    font-family: montserrat;
+    color: white;
     text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000, 0 0 1px #000, 0 0 2px #000, 0 0 1px #000, 0 0 1px #000, 0 0 1px #000, 0 0 1px #000, 0 0 1px #000, 0 0 1px #000,2px 4px 5px black;
-
 }
 
-/*Subtitulo*/
-h2{
-    width: 100%;
-    margin: auto;
-    border-bottom: 2px solid black;
-    padding:0.2em;
-    font-size:1.8em;
-    font-family: montserrat;
-    text-align: center;
-    color:black;
-}
-
-.capaSup h2 {
-    color: gray;
-    width: 90%;
-    transition: all 1.4s ease-in-out;
-    border-bottom: 1px solid black;
-}
-
-.capaSup:hover h2 {
+.pagina--principal h2 {
     color: white;
-    border-bottom: 1px solid white;
-}
-
-
-/** Parrafo existente **/
-.capaSup p{
-    padding:0.6em;
-    color:black;
-    font-family: montserrat;
-    text-align:left;
-    font-size:1.2em;
-    
-}
-
-.capaSup p {
-    color: gray;
     width: 90%;
-    margin-left: 25px;
-    transition: all 1.6s ease-in-out;
-}
-
-.capaSup:hover p {
-    color: white;
-}
-
-/** Caja de GameTrackers **/
-.caja{
+    font-family: montserrat;
+    padding:1.25em 2em 0.25em 0.5em;
+    border-bottom: 2px solid white;
     margin:auto;
+    margin-bottom: 0.8em;
+}
+
+.pagina--principal p {
+    color: white;
+    width: 90%;
+    margin: 0 auto 25px auto;
+    font-family: montserrat;
+    font-size: 1.1em;
 }
 
 /** Caja inferior **/
 footer {
+    display: flex;
+    justify-content: space-between; /* Separa las dos secciones */
     background: #2C2C2C;
+    box-shadow: 0px -2px 20px black;
     padding: 40px 50px;
     margin: 0;
     text-align: left;
     display: flex;                  /* usamos flexbox */
-    align-items: center;           /* alinea verticalmente al centro */
-    justify-content: left;       /* opcional: centra horizontalmente el conjunto */
+    justify-content: space-around;
     gap: 20px;                     /* espacio entre imagen y texto */
+    height: 12em;
 }
 
-footer img {
-    width: 200px;
+.footer-left img {
+    width: 9em;
     height: auto;
     margin: 0;
+    border:5px solid black;
+    box-shadow: 0px 0px 10px black;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre imagen y texto */
+}
+
+.footer-right {
+    text-align: center;
+    align-items: flex-end;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px; /* Espacio entre iconos */
+    justify-content: flex-end; /* Alinea iconos a la derecha */
+}
+
+.social-links img {
+    width: 50px; /* Tamaño de los iconos */
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover img {
+    transform: scale(1.2); /* Efecto hover en iconos */
 }
 
 .texto_Inferior {
@@ -152,25 +378,30 @@ footer img {
     color: white;
     font-size: 1.2em;
     margin: 0;
-    text-align: left;
+    text-align: center;
 }
 /*** DISTRIBUCIÓN ***/
 /*Central*/
 .contenidoCentral {
-    width: 80%;
+    width: 75%;
     margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    gap: 10px;
+    flex-flow: row wrap;
+    gap: 20px;
+}
+
+.contenidoCentral a {
+    flex: 0 0 calc(42% - 10px); /* 50% del ancho - gap */
+    text-align: center; /* Opcional: centra la imagen dentro del <a> */
 }
 
 .contenidoCentral img {
-    width: 85%;
-    position:static;
-    float:left;
-    margin: auto 50px;
+    width: 100%; /* La imagen ocupa el 100% del <a> */
+    height: auto; /* Mantiene la proporción */
+    display: block; /* Elimina espacio fantasma debajo de la imagen */
 }
 
 /*Celda*/
@@ -189,30 +420,53 @@ footer img {
 
 /*ImagenTabla*/
 /* Opacidad  */
-.opacity {
+.opacity-left {
     filter:alpha(opacity=50);
     -moz-opacity: 0.5;
     opacity: 0.5;
     transition:all 1s linear;
+    transition: all 0.5s ease-in-out;
+    z-index: 49;
 }
  
-.opacity:hover {
+.opacity-left:hover {
     filter:alpha(opacity=100);
     -moz-opacity: 1.0;
     opacity: 1.0;
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 0 10px rgba(250, 250, 25, 0.2);
+    filter: saturate(1.5);
+    z-index: 50;
+}
+
+.opacity-right {
+    filter:alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+    transition:all 1s linear;
+    transition: all 0.5s ease-in-out;
+    z-index: 49;
+}
+ 
+.opacity-right:hover {
+    filter:alpha(opacity=100);
+    -moz-opacity: 1.0;
+    opacity: 1.0;
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 0 10px rgba(250, 250, 25, 0.2);
+    filter: saturate(1.5);
+    z-index: 50;
 }
 
 /*Imagen de Retorno */
-.imagen01{
-    position:fixed;
-    left: 50px;
-    top:50px;
+.imagen01{ 
     width:5%; /*el tamaño es relativo al tamaño de la ventana*/
     max-width: 100px; /*el tamaño máximo será de 100px*/
     min-width:40px; /*el tamaño mínimo será de 40px*/
     border:1px solid black; /*el borde es negro*/
-    z-index:2;
-    
+    position: relative; /*la posición es fija*/
+    left:25px; /*está a 25px de la izquierda del borde de la ventana*/
+    top:20%; /*está en el 20% del tamaño de la altura de la barra*/
 }
 
 .texto01{
@@ -230,12 +484,101 @@ footer img {
     
 }
 
+#fotoPerfil {
+    width: 220px;
+    max-width: 40%;
+    float: left;
+    margin: 0 1.5em 1em 0.5em;
+    padding: 0.45em;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
+
+/** Blogs **/
+
+.pagina--blog {
+    
+}
 
 
 
 @media only screen and (max-width:700px) {
+
+    .pagina{
+        background-size: cover;
+    }
     /*** TABLA ***/
 /*Tabla*/
+
+    .barraNav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 16px;
+    }
+
+    .textoNav {
+        text-align: center;
+        order: 1;
+        width:50%;
+        margin:auto;
+        padding-top:0.65em;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        order: 2;
+        margin-left: auto;
+    }
+
+    #header {
+        width: 100%;
+        order: 3;
+    }
+
+    .tablaNav {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 12px;
+        margin-top: 10px;
+        display: none;
+    }
+
+    .tablaNav.is-open {
+        display: flex;
+    }
+
+    .tablaNav li ul {
+        position: static;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        background: transparent;
+    }
+
+    .tablaNav li.submenu-open > ul {
+        display: block;
+    }
+
+    .tablaNav li ul li a {
+        padding-left: 0;
+    }
+
+    nav {
+        margin-left: auto;
+        padding-left:0;
+    }
+
+    #fotoPerfil {
+        float: none;
+        width: 80%;
+        max-width: 320px;
+        display: block;
+        margin: 0 auto 1.25em auto;
+    }
+
 
 
 div.imagen{
@@ -260,6 +603,16 @@ h2{
     width: 100%;
     margin:auto;
 }
+
+.content-wrapper {
+    flex-direction: column;
+    width: 95%;
+}
+
+.sidebar {
+    width: 100%;
+    margin-top: 20px;
+}
 /*Celda*//*
 .tablaCentral img{
     width: 100%;
@@ -283,34 +636,36 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    height: auto;
   }
 
 .texto_Inferior {
     margin-top: 10px;
 }
 
+.opacity-left {
+    -moz-opacity: 1;
+    opacity: 1;
+}
+ 
+.opacity-left:hover {
+    box-shadow: 0 0 10px rgba(250, 250, 25, 0.2);
+    filter: saturate(1.5);
+}
+
+.opacity-right {
+    -moz-opacity: 1;
+    opacity: 1;
+}
+ 
+.opacity-right:hover {
+    box-shadow: 0 0 10px rgba(250, 250, 25, 0.2);
+    filter: saturate(1.5);
+}
+
 .imagen01{
-    left: 10px;
-}
+    display:none;
 
-.capaSup{
-    background:none;
-    box-shadow:none;
-    color:white;
-}
-
-.capaSup:hover{
-    background:none;
-}
-.capaSup h2 {
-    color: white;
-    border-bottom: 1px solid white;
-}
-
-.capaSup p {
-    width:89%;
-    margin:auto;
-    color: white;
 }
 
 }

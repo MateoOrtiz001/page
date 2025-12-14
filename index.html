@@ -3,54 +3,113 @@
     <head>
         <meta charset="UTF-8"><!-- codificamos el archivo con UTF-8, para pode usar la "ñ" y tildes-->
         <meta name="viewport" content="width=device-width; initial-scale=1.0">
-        <title>M4T30- Página Principal</title><!-- nombramos la página, esto aparecerá en la pestaña del navegador-->
+        <title>Mateo Ortiz - Página Principal</title><!-- nombramos la página, esto aparecerá en la pestaña del navegador-->
         <link href="style.css" rel="stylesheet" type="text/css">
         <link  rel="icon"   href="favicon.ico" type="image/ico"><!--añadimos el favicon (imagen que aparece en la pestaña de la página)--> 
         <script  src="script.js"></script>
     </head>
     
     <body>
-        <!-- contenido que está fijo arriba a la izquierda-->
-         <img src="forjaz/imagenes/muradin02.png" onmouseover="textoEnanoIn()" onmouseout="textoEnanoOut()" class="imagen01" alt="imagen de muradin">  
-         <p class="texto01" style="display:none" id="textEnano">Imagen para retornar a esta página desde cualquier página</p>
         <!-- contenido de página-->
-        <h1> Páginas de M4T30</h1>
-        <br>
-        <div class="pagina">
-        <div class="capaSup">          
-            <h2>Contenido</h2><br>
-            <p>
-                Esta es la página principal, 
-                desde acá podrás navegar por todas mis páginas.
-            </p>
-        <br>
-            <div class="contenidoCentral">
-                <a target="_self" href="forjaz/index.html"> 
-                    <img src="imagenes/forjaz.png"class="opacity">
-                </a>
-                <a target="_self" href="blog/index.html">
-                    <img src="imagenes/blog2.png"class="opacity">
-                </a>
+        <header>
+         <div class="barraNav">
+                <a href="index.html" class="logo-link">
+                    <img src="forjaz/imagenes/muradin02.png" class="imagen01" alt="imagen de muradin">
+                </a><!-- La imagen que está siempre ajustada a la izquierda arriba -->
+                <p class="textoNav"> Página Principal </p>
+                <button class="nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu">☰</button>
+                <div id="header">
+                    <nav aria-label="Navegación principal">
+                        <ul class="tablaNav" id="nav-menu">
+                            <li><a href="index.html" target="_self" > Inicio</a></li>
+                            <li class="has-submenu">
+                                <button class="submenu-toggle" type="button" aria-expanded="false">Publicaciones</button>
+                                <ul>
+                                    <li><a href="blog/entradas.html">Entradas</a></li>
+                                    <li><a href="blog/galeria.html">Fotografías</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="mailto:mortizhi@unal.edu.co"> Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <br>
-            <h2>Otros</h2>
-            <br>
-            <table style="margin:auto">
-                <tr>    
-                    <td><a href="https://www.facebook.com/tiozitro777" target="_blank"><img src="imagenes/logoFacebook.png" width="75px" ></a></td>
-                    <td><a href="https://twitter.com/ZitroMateo666" target="_blank"><img src="imagenes/logoTwitter.png" width="75px" ></a></td>
-                    <td><a href="https://www.youtube.com/channel/UClP_Lmn7-I25jTA0-kM3m_w" target="_blank"><img src="imagenes/logoYoutube.png" width="75px" ></a></td>
-                    <td><a href="https://comunidad.fandom.com/wiki/Usuario:Zitromateo" target="_blank"><img src="imagenes/logoFandom.png" width="75px"></a></td>
-                </tr>
-            
-            </table>
-            <br />
-        </div>
+        </header>
+        <br>
+        <div style="padding-top:4em">
+            <h1> Página Principal</h1>
         </div>
         <br>
+        <div class="content-wrapper">
+            <section class="pagina pagina--principal">
+                <h2>Sobre mi</h2>
+                
+                <p><img src="imagenes/fotoPerfil.png" id="fotoPerfil" alt="Foto de perfil de Mateo Ortiz">  
+                    Mi nombre es Mateo Ortiz, soy científico de la computación interesado en construir sistemas que mezclen matemáticas,
+                    aprendizaje automático y creatividad. Me gusta entender los modelos desde sus fundamentos teóricos 
+                    y llevarlos hasta implementaciones reales.
+                </p>
+                <p>
+                    Disfruto trabajar en proyectos donde la experimentación y el rigor matemático conviven, especialmente en áreas
+                    relacionadas con el aprendizaje automático, la visión por computador y la teoría de la computación. Este sitio
+                    funciona como un espacio para documentar proyectos, ideas y experimentos en los que trabajo de forma académica
+                    y personal.
+                </p>
+
+                <p>
+                    Fuera del ámbito técnico, algunos de mis intereses incluyen la escucha y colección de música, la lectura de
+                    literatura de fantasía, el senderismo y la exploración de nuevos lugares. También soy un entusiasta de los
+                    videojuegos, en particular aquellos ambientados en mundos de fantasía como Warcraft.
+                </p>
+                <p>
+                    Algunas de las áreas en las que me gusta trabajar incluyen:
+                </p>
+                <ul>
+                    <li>× Aprendizaje por Refuerzo</li>
+                    <li>× Modelos Generativos </li>
+                    <li>× Matemáticas aplicadas </li>
+                    <li>× Teoría de la Computación </li>
+                </ul>
+                <br>
+            </section>
+            <aside class="sidebar" aria-label="Columna lateral">
+                <div class="sidebar-card">
+                    <h3>Enlaces rápidos</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="blog/index.html">Leer las últimas entradas del blog</a></li>
+                        <li><a href="https://github.com/MateoOrtiz001" target="_blank" rel="noopener">Visitar mi GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Algunos Proyectos</h3>
+                    <p>
+                        Algunos de mis proyectos son:
+                    </p>
+                    <ul class="sidebar-list">
+                        <li>× Sistema automatizado para la predicción de la inflación en Colombia. </li>
+                        <li>× Laboratorio para la construcción de redes neuronales LSTM y GRU con aplicaciones en actuaría y finanzas.</li>
+                        <li>× Entrenamiento de agentes del videojuego Battle City por aprendizaje por refuerzo. </li>
+                        <li>× Agente para solucionar Sudokus. </li>
+                        <li>× Detector de datos en partidos de Fútbol utilizando YOLO. </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
         <footer>
-            <img src="imagenes/enano1.gif" width="250px">
-            <p class="texto_Inferior">Página creada por Mateo Ortiz</p>
+            <div class="footer-left">
+                <img src="imagenes/enano1.gif" width="250px">
+                <p class="texto_Inferior">Página creada por Mateo Ortiz</p>
+            </div>
+            <div class="footer-right">
+                <p class="texto_Inferior">¡Sígueme!</p>
+                <br>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/tiozitro777" target="_blank"><img src="imagenes/logoFacebook.png" alt="Facebook"></a>
+                    <a href="https://github.com/MateoOrtiz001" target="_blank"><img src="imagenes/logoGithub.png" alt="GitHub"></a>
+                    <a href="https://www.youtube.com/@mateoortiz-rq7dw" target="_blank"><img src="imagenes/logoYoutube.png" alt="Instagram"></a>
+                    <a href="https://comunidad.fandom.com/wiki/Usuario:Zitromateo" target="_blank"><img src="imagenes/logoFandom.png" alt="GitHub"></a>
+                </div>
+            </div>
         </footer>
     </body>
     
