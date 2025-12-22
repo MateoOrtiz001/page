@@ -6,7 +6,18 @@
     src: url('fonts/Montserrat-Regular.ttf'),url('fonts/Montserrat-Bold.ttf'),url('fonts/Montserrat-BoldItalic.ttf'),url('fonts/Montserrat-Italic.ttf');
 }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-
+@font-face{
+    font-family: Jost;
+    src: url('fonts/Jost-Regular.ttf'),url('fonts/Jost-Italic.ttf'),url('fonts/Jost-Bold.ttf'),url('fonts/Jost-BoldItalic.ttf'),url('fonts/Jost-SemiBold.ttf');
+}
+@font-face{
+    font-family: AncizarSerif;
+    src: url('fonts/AncizarSerif/AncizarSerif-Regular.otf'),url('fonts/AncizarSerif/AncizarSerif-Bold.otf'),url('fonts/AncizarSerif/AncizarSerif-BoldItalic.otf'),url('fonts/AncizarSerif/AncizarSerif-Light.otf'),url('fonts/AncizarSerif/AncizarSerif-LightItalic.otf'),url('fonts/AncizarSerif/AncizarSerif-Italic.otf');
+}
+@font-face{
+    font-family: Ancizar;
+    src: url('fonts/AncizarSans/AncizarSans-Regular.otf'),url('fonts/AncizarSans/AncizarSans-Bold.otf'),url('fonts/AncizarSans/AncizarSans-BoldItalic.otf'),url('fonts/AncizarSans/AncizarSans-Light.otf'),url('fonts/AncizarSans/AncizarSans-LightItalic.otf'),url('fonts/AncizarSans/AncizarSans-Italic.otf');
+}
 
 /* Prevenir scroll horizontal y asegurar medidas relativas */
 * {
@@ -380,6 +391,51 @@ footer {
     margin: 0;
     text-align: center;
 }
+
+/** CAJAS **/
+
+/** Especiales**/
+
+.cajaBlog{
+	margin:auto;
+	background: #f9f8db;
+	font-family: AncizarSerif;
+	color:black;
+	padding:0.5em;
+	border:1px solid #6F6F6F;
+}
+
+.cajaBlog h2 {
+    font-family: AncizarSerif;
+    font-size: 125%;
+    margin-right:1cm;
+    padding-left:1cm;
+    border-bottom: 1px solid black;
+}
+
+.cajaBlog h3 {
+	font-family: AncizarSerif;
+	font-size: 115%;
+	margin-left:0.5cm;
+	border-bottom:none;
+	margin-top:0.5em;
+}
+
+.cajaBlog p{
+    font-family: AncizarSerif;
+    font-size: 105%;
+    font-weight: normal;
+    margin:0.5em;
+}
+
+.cajaBlog embed{
+    display: block;
+    margin: auto;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+}
+
+
 /*** DISTRIBUCIÓN ***/
 /*Central*/
 .contenidoCentral {
@@ -497,10 +553,24 @@ footer {
 
 /** Blogs **/
 
-.pagina--blog {
-    
+.pagina--entrada {
+    background:None;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 50px;
+    display: block;
+    padding-bottom: 0; 
+    position: relative;
+    overflow: hidden;
 }
 
+.pagina--entrada h2{
+    font-family:Jost;
+    font-size:2.5em;
+    font-weight: bold;
+    margin: auto;
+    padding: 0.5em;
+}
 
 
 @media only screen and (max-width:700px) {
@@ -666,6 +736,10 @@ footer {
 .imagen01{
     display:none;
 
+}
+
+.pagina--entrada {
+    width: 90%;
 }
 
 }
