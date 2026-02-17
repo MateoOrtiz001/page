@@ -84,7 +84,7 @@ body {
 }
 
 .nav-toggle:focus-visible {
-    outline: 2px solid #7ac49f;
+    outline: 2px solid oklch(81.004% 0.17598 162.336);
     outline-offset: 2px;
 }
 
@@ -137,12 +137,12 @@ ul, ol {
 
 .submenu-toggle:hover,
 .submenu-toggle:focus-visible {
-    color: #7ac49f;
+    color: oklch(81.004% 0.17598 162.336);
     outline: none;
 }
 
 .tablaNav li a:hover {
-    color: #7ac49f;
+    color: oklch(81.004% 0.17598 162.336);
 }
 
 .tablaNav li ul {
@@ -204,7 +204,7 @@ ul, ol {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(11, 7, 45, 0.7);
+    background: oklab(16.744999999999997% 0.01281 -0.072 / 0.716);
     z-index: 0;
 }
 
@@ -236,6 +236,42 @@ ul, ol {
     font-size: 0.95em;
     margin-bottom: 8px;
     padding-left:4em;
+}
+
+.pagina--blog {
+    flex: 3;
+    width: 100%;
+    background: oklch(0.2416 0.1 352.17);
+    color:white;
+    padding:1em;
+    margin:auto;
+    height: 500px;
+}
+.pagina--blog h2 {
+    font-family: montserrat;
+    padding: 0.5em;
+    font-size:1.9em;
+    border-bottom: white 2px solid;
+}
+.pagina--blog p{
+    padding:0.75em;
+    font-family:montserrat;
+}
+.pagina--blog li a{
+    color: white;
+    font-family: verdana;
+    outline:none;
+}
+.pagina--blog li a:visited{
+    outline: none;
+    color:white;
+}
+.pagina--blog li a:hover{
+    color:oklch(0.7964 0.1418 182.56);
+}
+.pagina--blog ul{
+    list-style-type: square;
+    padding-left:2em;
 }
 
 .sidebar {
