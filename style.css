@@ -183,7 +183,7 @@ ul, ol {
 /** Estílo de la caja principal **/
 .pagina {
     border: 1px solid black;
-    background: url("imagenes/NS02b.png");
+    background: url("imagenes/bg001.png");
     background-attachment: fixed;
     background-size: cover;
     background-position: center 20%; /* 20% desde la parte superior */

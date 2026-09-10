@@ -3,13 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const paginaSections = document.querySelectorAll('.pagina');
   const backgrounds = [
     {
-      url: 'imagenes/NS02b.png',
-      position: '-20px -10px',
-      size: '70%',
+      url: 'imagenes/bg001.png',
+      position: '-40px 2  0px',
+      size: 'cover',
       mobileSize: 'cover'
     },
     {
-      url: 'imagenes/NS03b.png',
+      url: 'imagenes/remTR2.jpg',
       position: '-240px -20px',
       size: 'cover',
       mobileSize: 'cover'
